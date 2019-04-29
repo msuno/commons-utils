@@ -1,6 +1,6 @@
-package cn.msuno.commons.http;
+package cn.msuno.commons.exception;
 
-import cn.msuno.commons.CommonRuntimeException;
+import cn.msuno.commons.exception.CommonRuntimeException;
 
 public class HttpClientException extends CommonRuntimeException {
     public HttpClientException() {

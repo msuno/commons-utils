@@ -1,4 +1,4 @@
-package cn.msuno.commons;
+package cn.msuno.commons.exception;
 
 public class CommonRuntimeException extends Exception {
 

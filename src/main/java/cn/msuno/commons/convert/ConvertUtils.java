@@ -1,6 +1,7 @@
 package cn.msuno.commons.convert;
 
 import cn.msuno.commons.Constants;
+import cn.msuno.commons.exception.ConvertException;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -36,7 +37,8 @@ public class ConvertUtils {
      * @param params Map参数key-value
      * @param isCDATA 是否添加CDATA
      **/
-    public static String MapToXml(String parentName, Map<String, Object> params, boolean isCDATA) throws ConvertException {
+    public static String MapToXml(String parentName, Map<String, Object> params, boolean isCDATA) throws
+            ConvertException {
         Document doc = DocumentHelper.createDocument();
         doc.addElement(parentName);
         String xml = iteratorXml(doc.getRootElement(), parentName, params, isCDATA);

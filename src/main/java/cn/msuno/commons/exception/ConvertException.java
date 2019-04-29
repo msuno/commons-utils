@@ -1,6 +1,6 @@
-package cn.msuno.commons.convert;
+package cn.msuno.commons.exception;
 
-import cn.msuno.commons.CommonRuntimeException;
+import cn.msuno.commons.exception.CommonRuntimeException;
 
 public class ConvertException extends CommonRuntimeException {
     public ConvertException() {

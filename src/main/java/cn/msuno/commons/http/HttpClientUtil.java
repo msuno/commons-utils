@@ -1,6 +1,7 @@
 package cn.msuno.commons.http;
 
 import cn.msuno.commons.Constants;
+import cn.msuno.commons.exception.HttpClientException;
 
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -46,7 +47,7 @@ public class HttpClientUtil {
 	 * @param url 请求地址
 	 * @param params 请求参数key-value
 	 **/
-	public static JSONObject doGet(String url, Map<String,String> params) throws HttpClientException{
+	public static JSONObject doGet(String url, Map<String,String> params) throws HttpClientException {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		String result = null;
 		CloseableHttpResponse response = null;
@@ -148,7 +149,8 @@ public class HttpClientUtil {
 		try {
 			if(response != null)
 				response.close();
-			httpClient.close();
+			if(httpClient != null)
+				httpClient.close();
 		} catch (IOException e) {
 			throw new HttpClientException(e.getMessage(),e);
 		}
